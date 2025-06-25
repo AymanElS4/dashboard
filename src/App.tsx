@@ -1,18 +1,24 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import './App.css'
+import HeaderUI from './componentes/HeaderUI';
+import AlertUI from './componentes/AlertUI';
 import { Grid } from '@mui/material';
 
 function App() {
-  const [count, setCount] = useState(0)
+  
 
   return (
     <Grid container spacing={5} justifyContent="center" alignItems="center">
-        <Grid size={{ xs: 12, md: 12 }}>Elemento: Encabezado</Grid>
+        <Grid size={{ xs: 12, md: 12 }}>
+          <HeaderUI/>
+          Elemento: Encabezado</Grid>
 
          
-        <Grid size={{ xs: 12, md: 12 }}>Elemento: Alertas</Grid>
+        <Grid size={{ xs: 12, md: 12 }} container justifyContent="right" alignItems="center">
+           
+
+            <AlertUI description="No se preveen lluvias"/>
+          Elemento: Alertas</Grid>
 
          
         <Grid size={{ xs: 12, md: 3  }}>Elemento: Selector</Grid>
