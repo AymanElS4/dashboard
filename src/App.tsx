@@ -1,17 +1,20 @@
-
 import './App.css'
 import HeaderUI from './componentes/HeaderUI';
 import AlertUI from './componentes/AlertUI';
-import { Grid } from '@mui/material';
+import { Grid, type SelectChangeEvent } from '@mui/material';
 import SelectorUI from './componentes/SelectorUI';
 import IndicatorUI from './componentes/IndicatorUI';
 import DataFetcher from './functions/DataFetcher';
 import TableUI from './componentes/TableUI';
 import ChartUI from './componentes/ChartUI';
+import { useState } from 'react';
 
 function App() {
-   const[cityInput, setCityInput] = useState<string>("");
-  const dataFetcherOutput = DataFetcher();
+  const [cityInput, setCityInput] = useState<string>("");
+  const handleChange = (event: SelectChangeEvent<string>) => {
+          setCityInput(event.target.value)
+  };
+  const dataFetcherOutput = DataFetcher(cityInput);
 
   return (
     <Grid container spacing={5} justifyContent="center" alignItems="center">
@@ -28,7 +31,7 @@ function App() {
 
 
       <Grid size={{ xs: 12, md: 3 }}>
-        <SelectorUI />
+        <SelectorUI cityInput={cityInput} handleChange={handleChange}/>
       </Grid>
 
 
