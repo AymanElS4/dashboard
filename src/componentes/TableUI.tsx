@@ -16,17 +16,17 @@ const columns: GridColDef[] = [
    
    {
       field: 'label',
-      headerName: 'Hour',
+      headerName: 'Hora',
       width: 200,
    },
    {
       field: 'value1',
-      headerName: 'Temperature 2m (°C)',
+      headerName: 'Temperatura 2m (°C)',
       width: 200,
    },
    {
       field: 'value2',
-      headerName: 'Wind Speed 10m (km/h)',
+      headerName: 'Velocidad del viento 10m (km/h)',
       width: 200,
    },
    

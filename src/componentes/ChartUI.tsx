@@ -19,13 +19,13 @@ export default function ChartUI( props: ChartUIProps) {
    return (
       <>
          <Typography variant="h5" component="div">
-            Chart Tiempo vs Temperatura 2 (°C) & Velocidad del viento 10m (km/h)
+            Tiempo vs Temperatura 2 (°C) & Velocidad del viento 10m (km/h)
          </Typography>
          <LineChart
             height={300}
             series={[
-               { data: values1, label: 'temperature 2m'},
-               { data: values2, label: 'wind speed 10m'},
+               { data: values1, label: 'temperatura 2m'},
+               { data: values2, label: 'velocidad del viento 10m'},
             ]}
             xAxis={[{ scaleType: 'point', data: labels }]}
          />
