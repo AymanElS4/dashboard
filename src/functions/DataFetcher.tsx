@@ -25,6 +25,16 @@ export default function DataFetcher(ciudad: string) : DataFetcherOutput {
     const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
+        
+        
+        let tiempo: string =localStorage.getItem(`${ciudad}_timestamp`)??"0";
+        let tiempoCache = parseInt(tiempo);
+        if(Date.now() - tiempoCache < 3600000){
+            setData(JSON.parse(localStorage.getItem(ciudad)!));
+            setLoading(false); 
+            setError(null); 
+        } 
+        
         if (!ciudad || !DicCiudad[ciudad as keyof typeof DicCiudad]) {
             
             setLoading(true);//Caso por defecto
@@ -47,6 +57,10 @@ export default function DataFetcher(ciudad: string) : DataFetcherOutput {
                 }
 
                 const result: OpenMeteoResponse = await response.json();
+
+                const datastring = JSON.stringify(result);
+                localStorage.setItem(ciudad, datastring);
+                localStorage.setItem(`${ciudad}_timestamp`, Date.now().toString());
                 setData(result);
 
             } catch (err: any) {
