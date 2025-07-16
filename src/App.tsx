@@ -8,6 +8,7 @@ import DataFetcher from './functions/DataFetcher';
 import TableUI from './componentes/TableUI';
 import ChartUI from './componentes/ChartUI';
 import { useState } from 'react';
+import CohereAssitant from './functions/CohereAssitant';
 
 function App() {
   const [cityInput, setCityInput] = useState<string>("");
@@ -15,6 +16,7 @@ function App() {
           setCityInput(event.target.value)
   };
   const dataFetcherOutput = DataFetcher(cityInput);
+  CohereAssitant();
 
   return (
     <Grid container spacing={5} justifyContent="center" alignItems="center">
@@ -107,6 +109,8 @@ function App() {
 
 
       <Grid size={{ xs: 12, md: 12 }}>Elemento: Información adicional</Grid>
+
+      
 
     </Grid>
 
