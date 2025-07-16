@@ -18,6 +18,7 @@
     "@mui/material": "^7.1.1",
     "@mui/x-charts": "^8.7.0",
     "@mui/x-data-grid": "^8.7.0",
+    "cohere-ai": "^7.17.1",
     "install": "^0.13.0",
     "npm": "^11.4.2",
     "react": "^19.1.0",
