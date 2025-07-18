@@ -16,7 +16,7 @@ function App() {
           setCityInput(event.target.value)
   };
   const dataFetcherOutput = DataFetcher(cityInput);
-  CohereAssitant();
+  CohereAssitant(dataFetcherOutput, cityInput);
 
   return (
     <Grid container spacing={5} justifyContent="center" alignItems="center">

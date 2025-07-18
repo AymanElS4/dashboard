@@ -4,7 +4,7 @@ import type { OpenMeteoResponse } from '../types/DashboardTypes';
 
 
 
-interface DataFetcherOutput {
+export interface DataFetcherOutput {
     data: OpenMeteoResponse | null;
     loading: boolean;
     error: string | null;
