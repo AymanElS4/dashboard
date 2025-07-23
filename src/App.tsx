@@ -108,9 +108,23 @@ function App() {
       </Grid>
 
 
-      <Grid size={{ xs: 12, md: 12 }}>Elemento: Información adicional</Grid>
-
-      
+      <Grid size={{ xs: 12, md: 12 }}>
+        {dataFetcherOutput.data && (
+          <IndicatorUI
+            title="Recomendación de salud"
+            description={
+              (() => {
+                const temp = dataFetcherOutput.data.current.temperature_2m;
+                if (temp >= 30) return "Hace mucho calor. Mantente hidratado y evita la exposición prolongada al sol.";
+                if (temp >= 20) return "Temperatura agradable. Usa ropa ligera y mantente activo.";
+                if (temp >= 10) return "Clima fresco. Usa una chaqueta ligera si sales.";
+                if (temp >= 0) return "Hace frío. Abrígate bien y evita cambios bruscos de temperatura.";
+                return "Temperatura muy baja. Evita salir si no es necesario y usa ropa térmica.";
+              })()
+            }
+          />
+        )}
+      </Grid>
 
     </Grid>
 

@@ -14,12 +14,14 @@ export default function CohereAssitant (DataFetcherOutput: DataFetcherOutput, ci
     messages: [
       {
         role: 'user',
-        content: datastring+' \n Dame un resumen de los datos obtenidos y dame recomendaciones sobre el clima de esta localidadad y el nombre de la Localidad. Responde en español y no uses emojis.',
+        content: `Ciudad: ${ciudad}\n` + datastring+' \n Dame un resumen de los datos obtenidos y dame recomendaciones sobre el clima de esta localidadad y el nombre de la Localidad. Responde en español y no uses emojis.',
       },
     ],
   });
 
 
   console.log(response);
+
 })();
-return }
+return 
+}
